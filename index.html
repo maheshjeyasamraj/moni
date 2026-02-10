@@ -241,55 +241,104 @@ opacity:1;
 }
 
 
-/* Final Section */
+
+
+/* ================= FINAL SECTION ================= */
 
 .final{
     position:relative;
     padding:100px 20px;
     text-align:center;
     color:white;
-    background:url("Ooty.jpeg") center/cover no-repeat;
 
-    /* Align content properly */
+    /* Background Image */
+    background:url("Ooty.jpeg") center center / cover no-repeat;
+    background-attachment:fixed;
+
+    /* Layout */
     min-height:100vh;
     display:flex;
     flex-direction:column;
-    justify-content:center;   /* Moves content vertically center */
+    justify-content:center;
     align-items:center;
+
+    overflow:hidden;
 }
+
+/* Dark Overlay For Text Visibility */
+.final::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.35);
+    z-index:0;
+}
+
+/* Keep Content Above Overlay */
+.final h2,
+.final p{
+    position:relative;
+    z-index:1;
+}
+
+/* Title */
 
 .final h2{
     font-size:48px;
     color:#ff4d6d;
     font-family:'Playfair Display',serif;
-    margin-top:40px; /* Moves title slightly downward */
+    margin-top:40px;
+    line-height:1.2;
 }
+
+/* Subtitle */
 
 .final p{
     margin-top:15px;
     font-size:18px;
+    max-width:500px;
 }
 
 
 
-
-/* Mobile Background */
+/* ================= MOBILE RESPONSIVE ================= */
 
 @media (max-width:768px){
-.final{
-background:url("love4.jpeg") center/cover no-repeat;
+
+    .final{
+        background:url("love4.jpeg") center center / cover no-repeat;
+
+        /* Fix parallax issue on mobile */
+        background-attachment:scroll;
+
+        padding:80px 20px;
+    }
+
+    .final h2{
+        font-size:32px;
+        margin-top:20px;
+    }
+
+    .final p{
+        font-size:16px;
+    }
+
+    .intro h1{
+        font-size:52px;
+    }
+
+    h2{
+        font-size:30px;
+    }
 }
 
-.intro h1{
-font-size:52px;
-}
 
-h2{
-font-size:30px;
-}
-}
+
+
+
 
 </style>
+
 </head>
 <body>
 
