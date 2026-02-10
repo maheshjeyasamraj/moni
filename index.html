@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Moni ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+
+<!-- Primary Meta -->
+<meta name="title" content="For My Moni ❤️">
+<meta name="description" content="A special love story and Valentine surprise made with love ❤️">
+
+<!-- Open Graph / Facebook / WhatsApp -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://yourdomain.com/">
+<meta property="og:title" content="For My Moni ❤️">
+<meta property="og:description" content="A special Valentine surprise made only for you ❤️">
+<meta property="og:image" content="https://yourdomain.com/images/valentine-moni.png">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://yourdomain.com/">
+<meta property="twitter:title" content="For My Moni ❤️">
+<meta property="twitter:description" content="A special Valentine surprise made only for you ❤️">
+<meta property="twitter:image" content="https://yourdomain.com/images/valentine-moni.png">
+
+
+<style>
+
+/* GLOBAL */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#0b0b0f;
+color:white;
+overflow-x:hidden;
+line-height:1.6;
+}
+
+section{
+padding:90px 8%;
+max-width:1200px;
+margin:auto;
+}
+
+h2{
+font-size:38px;
+margin-bottom:25px;
+color:#ff4d6d;
+text-align:center;
+font-family:'Playfair Display',serif;
+}
+
+/* Floating Hearts */
+
+.heart{
+position:fixed;
+bottom:-20px;
+font-size:20px;
+animation:float 6s linear infinite;
+color:#ff4d6d;
+pointer-events:none;
+}
+
+@keyframes float{
+0%{transform:translateY(0); opacity:1;}
+100%{transform:translateY(-100vh); opacity:0;}
+}
+
+/* Intro */
+
+.intro{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+background:linear-gradient(120deg,#0b0b0f,#1a0015);
+transition:opacity .6s ease;
+}
+
+.intro h1{
+font-family:'Great Vibes',cursive;
+font-size:70px;
+color:#ff4d6d;
+margin-bottom:15px;
+}
+
+.enter-btn{
+padding:14px 30px;
+border:none;
+background:#ff4d6d;
+color:white;
+font-size:18px;
+border-radius:30px;
+cursor:pointer;
+transition:.3s;
+}
+
+.enter-btn:hover{
+transform:scale(1.08);
+}
+
+/* Timeline */
+
+.timeline-item{
+margin-bottom:45px;
+border-left:3px solid #ff4d6d;
+padding-left:20px;
+}
+
+.timeline-item h3{
+color:#ff4d6d;
+margin-bottom:8px;
+}
+
+.timeline-img{
+width:100%;
+max-width:420px;
+margin-top:15px;
+border-radius:14px;
+display:block;
+box-shadow:0 8px 20px rgba(0,0,0,0.4);
+}
+
+/* Love Cards */
+
+.love-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+margin-top:40px;
+}
+
+.love-card{
+background:rgba(255,255,255,0.05);
+padding:25px;
+border-radius:15px;
+backdrop-filter:blur(10px);
+transition:.3s;
+text-align:center;
+font-weight:500;
+}
+
+.love-card:hover{
+transform:translateY(-8px);
+}
+
+/* Gallery */
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+margin-top:40px;
+align-items:center;
+}
+
+.gallery img{
+width:100%;
+border-radius:15px;
+transition:.3s;
+}
+
+.gallery img:hover{
+transform:scale(1.05);
+}
+
+/* Reel Video */
+
+.reel-video{
+width:100%;
+max-width:320px;
+aspect-ratio:9/16;
+overflow:hidden;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+margin:auto;
+}
+
+.reel-video video{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+/* Popup */
+
+.popup{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.85);
+display:flex;
+justify-content:center;
+align-items:center;
+visibility:hidden;
+opacity:0;
+transition:.4s;
+z-index:999;
+}
+
+.popup-content{
+background:#fff0f5;
+color:#111;
+padding:40px;
+border-radius:20px;
+max-width:600px;
+font-family:'Great Vibes',cursive;
+font-size:28px;
+text-align:center;
+}
+
+.popup-content button{
+margin-top:20px;
+padding:10px 25px;
+border:none;
+background:#ff4d6d;
+color:white;
+border-radius:20px;
+cursor:pointer;
+}
+
+.popup.show{
+visibility:visible;
+opacity:1;
+}
+
+
+/* Final Section */
+
+.final{
+    position:relative;
+    padding:100px 20px;
+    text-align:center;
+    color:white;
+    background:url("Ooty.jpeg") center/cover no-repeat;
+
+    /* Align content properly */
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;   /* Moves content vertically center */
+    align-items:center;
+}
+
+.final h2{
+    font-size:48px;
+    color:#ff4d6d;
+    font-family:'Playfair Display',serif;
+    margin-top:40px; /* Moves title slightly downward */
+}
+
+.final p{
+    margin-top:15px;
+    font-size:18px;
+}
+
+
+
+
+/* Mobile Background */
+
+@media (max-width:768px){
+.final{
+background:url("love4.jpeg") center/cover no-repeat;
+}
+
+.intro h1{
+font-size:52px;
+}
+
+h2{
+font-size:30px;
+}
+}
+
+</style>
+</head>
+<body>
+
+<!-- Hearts -->
+<div id="hearts"></div>
+
+<!-- Music -->
+<audio id="music" loop>
+<source src="Nee.mp3" type="audio/mp3">
+</audio>
+
+<!-- INTRO -->
+<div class="intro" id="intro">
+<h1>For My ❤️</h1>
+<p>This is made only for you...</p>
+<br>
+<button class="enter-btn" onclick="enterSite()">Enter Our World</button>
+</div>
+
+<!-- STORY -->
+<section>
+<h2>Our Story</h2>
+
+<div class="timeline-item">
+<h3>First Meeting</h3>
+<p>The day I first met you, I didn’t realize my life was about to change forever...</p>
+<img src="First.jpeg" class="timeline-img">
+</div>
+
+<div class="timeline-item">
+<h3>First Trip</h3>
+<p>Every road we travelled, every laugh we shared, and every silent moment we spent looking at each other made me realize how peaceful love can feel...</p>
+<img src="Trip.jpeg" class="timeline-img">
+</div>
+
+<div class="timeline-item">
+<h3>Marriage</h3>
+<p>Standing beside you, promising to be there in every smile and every struggle forever...</p>
+<img src="Mrg.png" class="timeline-img">
+</div>
+
+</section>
+
+<!-- LOVE -->
+<section>
+<h2>Things I Love About You</h2>
+
+<div class="love-grid">
+<div class="love-card">Your Smile 😊</div>
+<div class="love-card">Your Caring Heart ❤️</div>
+<div class="love-card">Your Support</div>
+<div class="love-card">Your Cute Anger 😄</div>
+</div>
+
+</section>
+
+<!-- GALLERY -->
+<section>
+<h2>Our Memories</h2>
+
+<div class="gallery">
+
+<div class="reel-video">
+<video autoplay muted loop playsinline>
+<source src="Soul.mp4" type="video/mp4">
+</video>
+</div>
+<img src="Love2.jpeg">
+<img src="Love1.jpeg">
+
+<img src="Love.jpeg">
+</div>
+
+</section>
+
+<!-- LETTER -->
+<section style="text-align:center">
+<h2>Secret Message</h2>
+<br>
+<button class="enter-btn" onclick="openLetter()">Open Love Letter</button>
+</section>
+
+<div class="popup" id="popup">
+<div class="popup-content">
+My Love,<br>
+You are my happiness, my peace, my home.<br>
+Every moment with you feels magical.<br>
+Thank you for being my forever Valentine ❤️
+<br>
+<button onclick="closeLetter()">Close</button>
+</div>
+</div>
+
+<!-- FINAL -->
+<div class="final">
+<h2>You Are My Forever ❤️</h2>
+<p>And one more surprise is waiting for you near you...</p>
+</div>
+
+
+
+
+
+
+
+<script>
+
+/* Enter Site */
+
+function enterSite(){
+
+    let intro = document.getElementById("intro");
+    let music = document.getElementById("music");
+
+    // Fade out intro
+    intro.style.opacity = "0";
+
+    setTimeout(()=>{
+
+        intro.style.display = "none";
+
+        // Start music with fade in
+        music.volume = 0;
+
+        music.play().then(() => {
+
+            let fade = setInterval(() => {
+
+                if(music.volume < 1){
+                    music.volume += 0.05;
+                } else {
+                    clearInterval(fade);
+                }
+
+            },200);
+
+        }).catch(() => {
+            console.log("Music autoplay blocked");
+        });
+
+    },600);
+}
+
+
+/* Popup */
+
+function openLetter(){
+    document.getElementById("popup").classList.add("show");
+}
+
+function closeLetter(){
+    document.getElementById("popup").classList.remove("show");
+}
+
+
+/* Floating Hearts */
+
+setInterval(()=>{
+
+    let heart = document.createElement("div");
+
+    heart.className = "heart";
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random()*100 + "vw";
+    heart.style.fontSize = (Math.random()*20 + 10) + "px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },6000);
+
+},500);
+
+</script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
